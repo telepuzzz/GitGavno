@@ -98,7 +98,7 @@ public class RomanCalc2 {
                     c = Integer.parseInt(a) / Integer.parseInt(b);
                     break;
                 default:
-                    System.out.println("Неверный оператор");
+                    System.out.println("Совсем Неверный оператор");
             }
             return String.valueOf(c);
         }
