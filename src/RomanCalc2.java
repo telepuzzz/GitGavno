@@ -9,79 +9,79 @@ public class RomanCalc2 {
 
     public static String calc(String input) {
         String[] splitInput = input.split("");
-        String a = splitInput[0];
-        String b = splitInput[2];
-        if(splitInput[0] == String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10)) {
-            return String.valueOf(a);
+        int a = 0;
+        int b = 0;
+        if(splitInput.equals(String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10))) {
+            a = Integer.parseInt(splitInput[0]);
         } else {
             switch (String.valueOf(a)) {
                 case "I":
-                    a = String.valueOf(1);
+                    a = Integer.parseInt(String.valueOf(1));
                     break;
                 case "II":
-                    a = String.valueOf(2);
+                    a = Integer.parseInt(String.valueOf(2));
                     break;
                 case "III":
-                    a = String.valueOf(3);
+                    a = Integer.parseInt(String.valueOf(3));
                     break;
                 case "IV":
-                    a = String.valueOf(4);
+                    a = Integer.parseInt(String.valueOf(4));
                     break;
                 case "V":
-                    a = String.valueOf(5);
+                    a = Integer.parseInt(String.valueOf(5));
                     break;
                 case "VI":
-                    a = String.valueOf(6);
+                    a = Integer.parseInt(String.valueOf(6));
                     break;
                 case "VII":
-                    a = String.valueOf(7);
+                    a = Integer.parseInt(String.valueOf(7));
                     break;
                 case "VIII":
-                    a = String.valueOf(8);
+                    a = Integer.parseInt(String.valueOf(8));
                     break;
                 case "IX":
-                    a = String.valueOf(9);
+                    a = Integer.parseInt(String.valueOf(9));
                     break;
                 case "X":
-                    a = String.valueOf(10);
+                    a = Integer.parseInt(String.valueOf(10));
                     break;
                 default:
                     System.out.println("Вы ввели недопустимое число");
             }
         }
-        if(splitInput[2] == String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10)) {
-            return String.valueOf(b);
+        if(splitInput[2].equals(String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10))) {
+            b = Integer.parseInt(splitInput[2]);
         } else {
             switch (String.valueOf(b)) {
                 case "I":
-                    b = String.valueOf(1);
+                    b = Integer.parseInt(String.valueOf(1));
                     break;
                 case "II":
-                    b = String.valueOf(2);
+                    b = Integer.parseInt(String.valueOf(2));
                     break;
                 case "III":
-                    b = String.valueOf(3);
+                    b = Integer.parseInt(String.valueOf(3));
                     break;
                 case "IV":
-                    b = String.valueOf(4);
+                    b = Integer.parseInt(String.valueOf(4));
                     break;
                 case "V":
-                    b = String.valueOf(5);
+                    b = Integer.parseInt(String.valueOf(5));
                     break;
                 case "VI":
-                    b = String.valueOf(6);
+                    b = Integer.parseInt(String.valueOf(6));
                     break;
                 case "VII":
-                    b = String.valueOf(7);
+                    b = Integer.parseInt(String.valueOf(7));
                     break;
                 case "VIII":
-                    b = String.valueOf(8);
+                    b = Integer.parseInt(String.valueOf(8));
                     break;
                 case "IX":
-                    b = String.valueOf(9);
+                    b = Integer.parseInt(String.valueOf(9));
                     break;
                 case "X":
-                    b = String.valueOf(10);
+                    b = Integer.parseInt(String.valueOf(10));
                     break;
             }
         }
@@ -90,16 +90,16 @@ public class RomanCalc2 {
 
         switch (operation) {
             case "+":
-                c = Integer.parseInt(a) + Integer.parseInt(b);
+                c = Integer.parseInt(String.valueOf(a)) + Integer.parseInt(String.valueOf(b));
                 break;
             case "-":
-                c = Integer.parseInt(a) - Integer.parseInt(b);
+                c = Integer.parseInt(String.valueOf(a)) - Integer.parseInt(String.valueOf(b));
                 break;
             case "*":
-                c = Integer.parseInt(a) * Integer.parseInt(b);
+                c = Integer.parseInt(String.valueOf(a)) * Integer.parseInt(String.valueOf(b));
                 break;
             case "/":
-                c = Integer.parseInt(a) / Integer.parseInt(b);
+                c = Integer.parseInt(String.valueOf(a)) / Integer.parseInt(String.valueOf(b));
                 break;
             default:
                 System.out.println("Совсем Неверный оператор");
