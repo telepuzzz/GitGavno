@@ -1,17 +1,20 @@
 import java.util.Scanner;
 
 public class RomanCalc2 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Введите выражение чисел");
-            System.out.println(calc(scanner.nextLine()));
-        }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите выражение чисел");
+        System.out.println(calc(scanner.nextLine()));
+    }
 
-        public static String calc(String input) {
-            String[] splitInput = input.split("");
-            String a = splitInput[0];
-            String b = splitInput[2];
-            switch(String.valueOf(a)){
+    public static String calc(String input) {
+        String[] splitInput = input.split("");
+        String a = splitInput[0];
+        String b = splitInput[2];
+        if(splitInput[0] == String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10)) {
+            return String.valueOf(a);
+        } else {
+            switch (String.valueOf(a)) {
                 case "I":
                     a = String.valueOf(1);
                     break;
@@ -44,9 +47,12 @@ public class RomanCalc2 {
                     break;
                 default:
                     System.out.println("Вы ввели недопустимое число");
-                    break;
             }
-            switch(String.valueOf(b)){
+        }
+        if(splitInput[2] == String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10)) {
+            return String.valueOf(b);
+        } else {
+            switch (String.valueOf(b)) {
                 case "I":
                     b = String.valueOf(1);
                     break;
@@ -57,7 +63,7 @@ public class RomanCalc2 {
                     b = String.valueOf(3);
                     break;
                 case "IV":
-                    b= String.valueOf(4);
+                    b = String.valueOf(4);
                     break;
                 case "V":
                     b = String.valueOf(5);
@@ -77,30 +83,28 @@ public class RomanCalc2 {
                 case "X":
                     b = String.valueOf(10);
                     break;
-                default:
-                    System.out.println("Вы ввели недопустимое число");
             }
-
-            String operation = splitInput[1];
-            int c = 0;
-
-            switch (operation) {
-                case "+":
-                    c = Integer.parseInt(a) + Integer.parseInt(b);
-                    break;
-                case "-":
-                    c = Integer.parseInt(a) - Integer.parseInt(b);
-                    break;
-                case "*":
-                    c = Integer.parseInt(a) * Integer.parseInt(b);
-                    break;
-                case "/":
-                    c = Integer.parseInt(a) / Integer.parseInt(b);
-                    break;
-                default:
-                    System.out.println("Совсем Неверный оператор");
-            }
-            return String.valueOf(c);
         }
+        String operation = splitInput[1];
+        int c = 0;
+
+        switch (operation) {
+            case "+":
+                c = Integer.parseInt(a) + Integer.parseInt(b);
+                break;
+            case "-":
+                c = Integer.parseInt(a) - Integer.parseInt(b);
+                break;
+            case "*":
+                c = Integer.parseInt(a) * Integer.parseInt(b);
+                break;
+            case "/":
+                c = Integer.parseInt(a) / Integer.parseInt(b);
+                break;
+            default:
+                System.out.println("Совсем Неверный оператор");
+        }
+        return String.valueOf(c);
     }
+}
 
