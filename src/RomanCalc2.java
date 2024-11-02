@@ -1,3 +1,4 @@
+import javax.naming.InsufficientResourcesException;
 import java.util.Scanner;
 
 public class RomanCalc2 {
@@ -9,6 +10,16 @@ public class RomanCalc2 {
 
     public static String calc(String input) {
         String[] splitInput = input.split(" ");
+        String roman = "I,II,III,IV,V,VI,VII,VIII,IX,X";
+        if((Integer.parseInt(splitInput[0]) > 0) & (Integer.parseInt(splitInput[0]) <= 10) & (Integer.parseInt(splitInput[2]) > 0 ) & (Integer.parseInt(splitInput[2]) <= 10)){
+            splitInput[0] = String.valueOf(Integer.parseInt(splitInput[0]));
+            splitInput[2] = String.valueOf(Integer.parseInt(splitInput[2]));
+        } else if(roman.contains(splitInput[0]) & roman.contains(splitInput[2])){
+            splitInput[0] = String.valueOf(splitInput[0]);
+            splitInput[2] = String.valueOf(splitInput[2]);
+        } else{
+            System.out.println("Числа введены неправильно :(");
+        }
         int a = 0;
         int b = 0;
         if ((splitInput[0].equals(String.valueOf(1))) || (splitInput[0].equals(String.valueOf(2))) || (splitInput[0].equals(String.valueOf(3))) || (splitInput[0].equals(String.valueOf(4))) || (splitInput[0].equals(String.valueOf(5))) || (splitInput[0].equals(String.valueOf(6))) || (splitInput[0].equals(String.valueOf(7))) || (splitInput[0].equals(String.valueOf(8))) || (splitInput[0].equals(String.valueOf(9))) || (splitInput[0].equals(String.valueOf(10)))) {
@@ -84,6 +95,7 @@ public class RomanCalc2 {
                     break;
             }
         }
+
         String operation = splitInput[1];
         int result = 0;
         switch (operation) {
@@ -104,5 +116,5 @@ public class RomanCalc2 {
         }
         int c = result;
         return String.valueOf(Integer.parseInt(String.valueOf(c)));
+        }
     }
-}
