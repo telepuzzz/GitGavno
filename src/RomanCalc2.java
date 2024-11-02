@@ -1,4 +1,3 @@
-import javax.naming.InsufficientResourcesException;
 import java.util.Scanner;
 
 public class RomanCalc2 {
@@ -11,7 +10,7 @@ public class RomanCalc2 {
     public static String calc(String input) {
         String[] splitInput = input.split(" ");
         String roman = "I,II,III,IV,V,VI,VII,VIII,IX,X";
-        if((Integer.parseInt(splitInput[0]) > 0) & (Integer.parseInt(splitInput[0]) <= 10) & (Integer.parseInt(splitInput[2]) > 0 ) & (Integer.parseInt(splitInput[2]) <= 10)){
+         if((Integer.parseInt(splitInput[0]) > 0) && (Integer.parseInt(splitInput[0]) <= 10) && (Integer.parseInt(splitInput[2]) > 0 ) && (Integer.parseInt(splitInput[2]) <= 10)){
             splitInput[0] = String.valueOf(Integer.parseInt(splitInput[0]));
             splitInput[2] = String.valueOf(Integer.parseInt(splitInput[2]));
         } else if(roman.contains(splitInput[0]) & roman.contains(splitInput[2])){
