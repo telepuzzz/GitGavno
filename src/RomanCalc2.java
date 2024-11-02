@@ -11,7 +11,7 @@ public class RomanCalc2 {
         String[] splitInput = input.split(" ");
         int a = 0;
         int b = 0;
-        if (splitInput[0].equals(String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10))) {
+        if ((splitInput[0].equals(String.valueOf(1))) || (splitInput[0].equals(String.valueOf(2))) || (splitInput[0].equals(String.valueOf(3))) || (splitInput[0].equals(String.valueOf(4))) || (splitInput[0].equals(String.valueOf(5))) || (splitInput[0].equals(String.valueOf(6))) || (splitInput[0].equals(String.valueOf(7))) || (splitInput[0].equals(String.valueOf(8))) || (splitInput[0].equals(String.valueOf(9))) || (splitInput[0].equals(String.valueOf(10)))) {
             a = Integer.parseInt(splitInput[0]);
         } else {
             switch (String.valueOf(splitInput[0])) {
@@ -48,7 +48,7 @@ public class RomanCalc2 {
             }
         }
 
-        if (splitInput[2].equals(String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10))) {
+        if ((splitInput[2].equals(String.valueOf(1))) || (splitInput[2].equals(String.valueOf(2))) || (splitInput[2].equals(String.valueOf(3))) || (splitInput[2].equals(String.valueOf(4))) || (splitInput[2].equals(String.valueOf(5))) || (splitInput[2].equals(String.valueOf(6))) || (splitInput[2].equals(String.valueOf(7))) || (splitInput[2].equals(String.valueOf(8))) || (splitInput[2].equals(String.valueOf(9))) || (splitInput[2].equals(String.valueOf(10)))) {
             b = Integer.parseInt(splitInput[2]);
         } else {
             switch (String.valueOf(splitInput[2])) {
