@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class RomanCalc2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите выражение чисел");
+        System.out.println("Введите римское или арабское выражение чисел от 1 до 10");
         System.out.println(calc(scanner.nextLine()));
     }
 
@@ -11,11 +11,10 @@ public class RomanCalc2 {
         String[] splitInput = input.split(" ");
         int a = 0;
         int b = 0;
-
-        String roman = new String("I,II,III,IV,V,VI,VII,VIII,IX,X");
-        String[] romanian = roman.split(",");
-        if (splitInput[0] == romanian[0] || splitInput[0] == romanian[1] || splitInput[0] == romanian[2] || splitInput[0] == romanian[3] || splitInput[0] == romanian[4] || splitInput[0] == romanian[5] || splitInput[0] == romanian[6] || splitInput[0] == romanian[7] || splitInput[0] == romanian[8] || splitInput[0] == romanian[9] ) {
-            switch (splitInput[0]) {
+        if (splitInput[0].equals(String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10))) {
+            a = Integer.parseInt(splitInput[0]);
+        } else {
+            switch (String.valueOf(splitInput[0])) {
                 case "I":
                     a = 1;
                     break;
@@ -47,65 +46,63 @@ public class RomanCalc2 {
                     a = 10;
                     break;
             }
-        } else {
-            a = Integer.parseInt(String.valueOf(splitInput[0]));
         }
 
-            if (splitInput[2] == romanian[0] || splitInput[2] == romanian[1] || splitInput[2] == romanian[3] || splitInput[2] == romanian[4] || splitInput[2] == romanian[5] || splitInput[2] == romanian[6] || splitInput[2] == romanian[7] || splitInput[2] == romanian[8] || splitInput[2] == romanian[9] ) {
-                switch (splitInput[2]) {
-                    case "I":
-                        b = 1;
-                        break;
-                    case "II":
-                        b = 2;
-                        break;
-                    case "III":
-                        b = 3;
-                        break;
-                    case "IV":
-                        b = 4;
-                        break;
-                    case "V":
-                        b = 5;
-                        break;
-                    case "VI":
-                        b = 6;
-                        break;
-                    case "VII":
-                        b = 7;
-                        break;
-                    case "VIII":
-                        b = 8;
-                        break;
-                    case "IX":
-                        b = 9;
-                        break;
-                    case "X":
-                        b = 10;
-                        break;
-                }
-            } else {
-                b = Integer.parseInt(String.valueOf(splitInput[2]));
+        if (splitInput[2].equals(String.valueOf(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10))) {
+            b = Integer.parseInt(splitInput[2]);
+        } else {
+            switch (String.valueOf(splitInput[2])) {
+                case "I":
+                    b = 1;
+                    break;
+                case "II":
+                    b = 2;
+                    break;
+                case "III":
+                    b = 3;
+                    break;
+                case "IV":
+                    b = 4;
+                    break;
+                case "V":
+                    b = 5;
+                    break;
+                case "VI":
+                    b = 6;
+                    break;
+                case "VII":
+                    b = 7;
+                    break;
+                case "VIII":
+                    b = 8;
+                    break;
+                case "IX":
+                    b = 9;
+                    break;
+                case "X":
+                    b = 10;
+                    break;
             }
-            String operation = splitInput[1];
-            int result = 0;
-            switch (operation) {
-                case "+":
-                    result = a + b;
-                    break;
-                case "-":
-                    result = a - b;
-                    break;
-                case "*":
-                    result = a * b;
-                    break;
-                case "/":
-                    result = a / b;
-                    break;
-                default:
-                    System.out.println("Совсем Неверный оператор");
-            }
-            int c = result;
-            return String.valueOf(Integer.parseInt(String.valueOf(c)));
         }
+        String operation = splitInput[1];
+        int result = 0;
+        switch (operation) {
+            case "+":
+                result = a + b;
+                break;
+            case "-":
+                result = a - b;
+                break;
+            case "*":
+                result = a * b;
+                break;
+            case "/":
+                result = a / b;
+                break;
+            default:
+                System.out.println("Введён неверный оператор");
+        }
+        int c = result;
+        return String.valueOf(Integer.parseInt(String.valueOf(c)));
     }
+}
