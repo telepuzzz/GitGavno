@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class RomanCalc2 {
+public class Calc2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите римское или арабское выражение чисел от 1 до 10");
@@ -9,16 +9,15 @@ public class RomanCalc2 {
 
     public static String calc(String input) {
         String[] splitInput = input.split(" ");
-        String arab = "1,2,3,4,5,6,7,8,9,10";
         String roman = "I,II,III,IV,V,VI,VII,VIII,IX,X";
-        if (arab.contains(splitInput[0]) & arab.contains(splitInput[2])) {
+        if((Integer.parseInt(splitInput[0]) > 0) && (Integer.parseInt(splitInput[0]) <= 10) && (Integer.parseInt(splitInput[2]) > 0 ) && (Integer.parseInt(splitInput[2]) <= 10)){
             splitInput[0] = String.valueOf(Integer.parseInt(splitInput[0]));
             splitInput[2] = String.valueOf(Integer.parseInt(splitInput[2]));
-        } else if (roman.contains(splitInput[0]) & roman.contains(splitInput[2])) {
+        } else if(roman.contains(splitInput[0]) & roman.contains(splitInput[2])){
             splitInput[0] = String.valueOf(splitInput[0]);
             splitInput[2] = String.valueOf(splitInput[2]);
-        } else {
-            return ("Вы ввели неподходящее число");
+        } else{
+            System.out.println("Числа введены неправильно :(");
         }
         int a = 0;
         int b = 0;
@@ -115,24 +114,6 @@ public class RomanCalc2 {
                 System.out.println("Введён неверный оператор");
         }
         int c = result;
-
-        if (arab.contains(splitInput[0]) & arab.contains(splitInput[2])) {
-            return String.valueOf(Integer.parseInt(String.valueOf(c)));
-        } else {
-            String resultRoman;
-            return resultRoman = convertNumToRoman(c);
-        }
-    }
-
-    private static String convertNumToRoman(int numArabian) {
-        String[] roman = {"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
-                "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
-                "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
-                "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
-                "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
-                "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
-                "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"
-        };
-        return roman[numArabian];
+        return String.valueOf(Integer.parseInt(String.valueOf(c)));
     }
 }
