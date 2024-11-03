@@ -7,7 +7,7 @@ public class RomanCalc2 {
         System.out.println(calc(scanner.nextLine()));
     }
 
-    public static String calc(String input) {
+    public static Object calc(String input) {
         String[] splitInput = input.split(" ");
         String arab = "1,2,3,4,5,6,7,8,9,10";
         String roman = "I,II,III,IV,V,VI,VII,VIII,IX,X";
@@ -18,7 +18,7 @@ public class RomanCalc2 {
             splitInput[0] = String.valueOf(splitInput[0]);
             splitInput[2] = String.valueOf(splitInput[2]);
         } else {
-            return ("Вы ввели неподходящее число");
+            return ("Вы ввели неподходящее число/числа");
         }
         int a = 0;
         int b = 0;
@@ -119,8 +119,15 @@ public class RomanCalc2 {
         if (arab.contains(splitInput[0]) & arab.contains(splitInput[2])) {
             return String.valueOf(Integer.parseInt(String.valueOf(c)));
         } else {
-            return convertNumToRoman(c);
+            try {
+                return convertNumToRoman(c);
+            } catch (Exception e) {
+                System.out.println("Результат выражения римских чисел не может быть отрицательным");
+                System.exit(0);
+            }
         }
+
+        return null;
     }
 
     private static String convertNumToRoman(int numArabian) {
