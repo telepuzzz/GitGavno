@@ -119,8 +119,7 @@ public class RomanCalc2 {
         if (arab.contains(splitInput[0]) & arab.contains(splitInput[2])) {
             return String.valueOf(Integer.parseInt(String.valueOf(c)));
         } else {
-            String resultRoman;
-            return resultRoman = convertNumToRoman(c);
+            return convertNumToRoman(c);
         }
     }
 
